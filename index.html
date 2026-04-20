@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketBoost Rwanda | Book Tickets Fast in Kigali & Beyond</title>
+    <!-- Bootstrap 5.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --green: #00A651;
+            --yellow: #F9C74F;
+            --grey: #4A4A4A;
+            --orange: #FF6B00;
+            --light-grey: #F4F4F4;
+        }
+        
+        * {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .navbar {
+            background: linear-gradient(90deg, var(--green), #008c44);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+        }
+        .logo span {
+            color: var(--yellow);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 166, 81, 0.85), rgba(0, 166, 81, 0.85)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-green {
+            background-color: var(--green);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .btn-green:hover {
+            background-color: #008c44;
+            transform: translateY(-3px);
+        }
+        
+        .btn-orange {
+            background-color: var(--orange);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .card-event {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-event:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 166, 81, 0.3);
+        }
+        
+        .section-title {
+            color: var(--green);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--yellow);
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 12px 16px;
+        }
+        
+        .social-feed {
+            background: var(--light-grey);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        
+        footer {
+            background: var(--grey);
+        }
+        
+        .flag-strip {
+            background: linear-gradient(to right, #00A651 33%, #F9C74F 33%, #F9C74F 66%, #FF6B00 66%);
+            height: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">
+                TicketBoost <span>Rwanda</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-4" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-4" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link px-4" href="#book">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link px-4" href="#social">Community</a></li>
+                    <li class="nav-item"><a class="nav-link px-4" href="#about">About</a></li>
+                    <li class="nav-item ms-3">
+                        <button onclick="showLoginModal()" class="btn btn-outline-light rounded-pill px-4">
+                            <i class="fas fa-user me-1"></i> Login
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-3 fw-bold mb-3">Fast. Secure. Local.</h1>
+                    <h2 class="display-5 mb-4">Book tickets for events &amp; transport across Rwanda in seconds</h2>
+                    <p class="lead mb-5 fs-4">No more queues in Kigali. No more cash-only hassle.<br>From Gasabo District to every sector — TicketBoost Rwanda makes it easy.</p>
+                    
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <a href="#book" class="btn btn-green btn-lg px-5 py-3 shadow-sm">
+                            <i class="fas fa-ticket-alt me-2"></i> Book Tickets Now
+                        </a>
+                        <a href="#events" class="btn btn-outline-light btn-lg px-5 py-3">
+                            Browse Events <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <small class="d-block text-white-50">Trusted by 12,450 Rwandans • Powered by local data</small>
+                        <div class="d-flex justify-content-center gap-3 mt-3">
+                            <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda Flag" height="28">
+                            <span class="text-white-50">Kigali • Musanze • Rubavu • Huye</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / PROBLEM SOLVED -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title display-5 fw-bold mb-4">Real Problem in Our Community</h2>
+                    <p class="lead text-muted">In Kigali and across Rwanda, buying tickets for concerts, festivals, bus rides, and community events still means long queues, cash payments, and scalpers. People in rural sectors lose opportunities because of poor access.</p>
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-success bg-opacity-10 text-success rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-clock fa-3x"></i>
+                                </div>
+                                <h5 class="mt-3">Save Time</h5>
+                                <p class="small">No more waiting in line at Kigali Arena or bus parks</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-warning bg-opacity-10 text-warning rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-shield-alt fa-3x"></i>
+                                </div>
+                                <h5 class="mt-3">Secure &amp; Fair</h5>
+                                <p class="small">QR tickets prevent fraud and scalping</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-orange bg-opacity-10 text-orange rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-globe-africa fa-3x"></i>
+                                </div>
+                                <h5 class="mt-3">Scalable</h5>
+                                <p class="small">Works in every district — ready for national rollout</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg">
+                        <!-- Placeholder video (you can replace with real Rwanda event video) -->
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3t4Xq0j1t5U" title="Rwanda - The Land of a Thousand Hills" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center text-muted mt-3 small">Watch how TicketBoost is changing ticketing in Kigali (demo video)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED EVENTS -->
+    <section id="events" class="py-5" style="background: var(--light-grey);">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <h2 class="section-title display-5 fw-bold">Upcoming Events &amp; Rides</h2>
+                <a href="#" onclick="alert('In full version this would filter by district (Kigali, Musanze, etc.)')" class="btn btn-sm btn-outline-success rounded-pill">Filter by District <i class="fas fa-filter ms-1"></i></a>
+            </div>
+            
+            <div class="row g-4" id="eventsContainer">
+                <!-- Populated by JavaScript below -->
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="book" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <h2 class="section-title text-center display-5 fw-bold mb-4">Book Your Ticket Now</h2>
+                            <p class="text-center text-muted mb-5">Fill the form — validated in real-time. Simulated data for Gasabo District, Kigali.</p>
+                            
+                            <form id="bookingForm" novalidate>
+                                <div class="row g-4">
+                                    <!-- Event Selection -->
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Select Event / Ride</label>
+                                        <select id="eventSelect" class="form-select" required>
+                                            <option value="">Choose one...</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Date -->
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Date</label>
+                                        <input type="date" id="date" class="form-control" required>
+                                    </div>
+                                    
+                                    <!-- Full Name -->
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Full Name</label>
+                                        <input type="text" id="fullName" class="form-control" placeholder="Jean Mugisha" required>
+                                    </div>
+                                    
+                                    <!-- Phone (Rwanda format) -->
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Phone Number</label>
+                                        <input type="tel" id="phone" class="form-control" placeholder="+250 788 123 456" pattern="^\+250[0-9]{9}$" required>
+                                    </div>
+                                    
+                                    <!-- Email -->
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-semibold">Email Address</label>
+                                        <input type="email" id="email" class="form-control" placeholder="you@email.rw" required>
+                                    </div>
+                                    
+                                    <!-- Number of Tickets -->
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Number of Tickets</label>
+                                        <input type="number" id="tickets" class="form-control" min="1" max="10" value="1" required>
+                                    </div>
+                                    
+                                    <!-- District (for scalability demo) -->
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Your District</label>
+                                        <select id="district" class="form-select" required>
+                                            <option value="Gasabo">Gasabo (Kigali)</option>
+                                            <option value="Kicukiro">Kicukiro</option>
+                                            <option value="Nyarugenge">Nyarugenge</option>
+                                            <option value="Musanze">Musanze</option>
+                                            <option value="Rubavu">Rubavu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-5 text-center">
+                                    <button type="submit" class="btn btn-green btn-lg px-5 py-3 shadow-sm w-100 w-md-auto">
+                                        <i class="fas fa-check-circle me-2"></i> Confirm Booking — Pay 5000 RWF
+                                    </button>
+                                </div>
+                                
+                                <div id="formFeedback" class="mt-3 text-center"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA FEEDS (Integrated with official embeds) -->
+    <section id="social" class="py-5" style="background: var(--light-grey);">
+        <div class="container">
+            <h2 class="section-title display-5 fw-bold text-center mb-5">Stay Updated — Our Social Feeds</h2>
+            <div class="row g-5">
+                
+                <!-- Facebook Feed -->
+                <div class="col-lg-6">
+                    <h5 class="d-flex align-items-center gap-2 mb-3">
+                        <i class="fab fa-facebook-f text-primary"></i> Facebook — @TicketBoostRwanda
+                    </h5>
+                    <div class="social-feed">
+                        <!-- Official Facebook Page Plugin (replace with your real page URL after creating the page) -->
+                        <div id="fb-root"></div>
+                        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+                        <div class="fb-page" 
+                             data-href="https://www.facebook.com/TicketBoostRwanda" 
+                             data-width="500" 
+                             data-height="420" 
+                             data-small-header="false" 
+                             data-adapt-container-width="true" 
+                             data-hide-cover="false" 
+                             data-show-facepile="true"></div>
+                        <p class="text-center mt-3 small text-muted">Real-time posts from our official page. In production this connects via Facebook Graph API.</p>
+                    </div>
+                </div>
+                
+                <!-- Twitter / X Feed -->
+                <div class="col-lg-6">
+                    <h5 class="d-flex align-items-center gap-2 mb-3">
+                        <i class="fab fa-x-twitter"></i> X (Twitter) — @TicketBoostRW
+                    </h5>
+                    <div class="social-feed">
+                        <!-- Official Twitter Timeline Widget -->
+                        <a class="twitter-timeline" 
+                           href="https://twitter.com/TicketBoostRW" 
+                           data-height="420" 
+                           data-theme="light" 
+                           data-chrome="noheader nofooter noborders">
+                           Loading latest tweets from TicketBoost Rwanda...
+                        </a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <p class="text-center mt-3 small text-muted">Real-time tweets. In production this uses Twitter API v2 with OAuth for live data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="logo mb-3">TicketBoost <span>Rwanda</span></h4>
+                    <p class="small opacity-75">Built for Kigali &amp; every Rwandan district.<br>Scalable, secure, and proudly local.</p>
+                    <div class="flag-strip rounded-3 my-3"></div>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Events</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Bus Rides</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Cultural Festivals</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold">Technologies Used</h6>
+                    <p class="small opacity-75">HTML5 • CSS3 • Bootstrap 5 • JavaScript • Facebook &amp; Twitter API embeds</p>
+                </div>
+                <div class="col-md-3 text-md-end">
+                    <h6 class="fw-bold mb-3">Ready for other districts?</h6>
+                    <button onclick="alert('Scalability demo: This app can be deployed to any Rwandan district in minutes!')" class="btn btn-orange rounded-pill">
+                        Scale to Your Sector →
+                    </button>
+                    <p class="small mt-3 opacity-75">© 2026 TicketBoost Rwanda • All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
